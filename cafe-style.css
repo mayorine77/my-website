@@ -1,0 +1,70 @@
+/* cafe-style.css */
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif; /* カフェっぽくセリフ体に */
+  color: #4e342e; /* 濃いブラウン */
+  background-color: #fafafa;
+}
+
+/* ナビゲーション */
+.cafe-nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.cafe-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cafe-nav li {
+  margin: 0 20px;
+}
+
+.cafe-nav a {
+  text-decoration: none;
+  color: #4e342e;
+  font-weight: bold;
+}
+
+/* メインビジュアル（ここにカフェの画像を入れる想定） */
+.cafe-hero {
+  height: 80vh;
+  background-color: #d7ccc8; /* 画像がない時の仮の色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+/* コンテンツ共通 */
+.cafe-content {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  margin: 20px;
+}
