@@ -1,55 +1,30 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cafe Yuuri - 至福のひととき</title>
-  <link rel="stylesheet" href="cafe-style.css">
-</head>
-<body>
-
-  <header>
-    <nav class="cafe-nav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#access">Access</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="home" class="cafe-hero">
-    <div class="hero-text">
-      <h1>Cafe Yuuri</h1>
-      <p>こだわりの豆と、静かな時間。</p>
-    </div>
-  </section>
-
-  <section id="menu" class="cafe-content">
+<section id="menu" class="cafe-content">
     <h2>Menu</h2>
     <div class="menu-list">
-      <div class="menu-item">
-        <h3>Coffee</h3>
-        <p>ブレンドコーヒー ・・・ ¥500</p>
-        <p>カフェラテ ・・・ ¥550</p>
+      
+      <div class="menu-item cafe-card">
+        <img src="ラテ.jpg" alt="ラテアートが施されたカフェラテ" class="menu-img">
+        <div class="menu-text">
+          <h3>Cafe Latte</h3>
+          <p>こだわりの豆とミルク。 ¥550</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <h3>Food</h3>
-        <p>厚切りトースト ・・・ ¥400</p>
-        <p>自家製プリン ・・・ ¥450</p>
+
+      <div class="menu-item cafe-card featured">
+        <img src="ガレット.jpg" alt="そば粉のガレット、卵とハム" class="menu-img">
+        <div class="menu-text">
+          <h3>Galette</h3>
+          <p>ランチに人気。 ¥800</p>
+        </div>
       </div>
+
+      <div class="menu-item cafe-card">
+        <img src="ティラミス.png" alt="グラスに入った自家製ティラミス" class="menu-img">
+        <div class="menu-text">
+          <h3>Tiramisu</h3>
+          <p>自家製デザート。 ¥600</p>
+        </div>
+      </div>
+
     </div>
   </section>
-
-  <section id="access" class="cafe-content">
-    <h2>Access</h2>
-    <p>住所：東京都○○区△△ 1-2-3</p>
-    <p>営業時間：10:00 〜 19:00（火曜定休）</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Cafe Yuuri</p>
-  </footer>
-
-</body>
-</html>

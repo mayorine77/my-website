@@ -1,20 +1,22 @@
-/* cafe-style.css */
+/* cafe-style.css (画像組み込み・レスポンシブ版) */
 
 body {
   margin: 0;
-  font-family: "Georgia", serif; /* カフェっぽくセリフ体に */
-  color: #4e342e; /* 濃いブラウン */
+  font-family: "Georgia", serif;
+  color: #4e342e;
   background-color: #fafafa;
+  line-height: 1.6;
 }
 
 /* ナビゲーション */
 .cafe-nav {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .cafe-nav ul {
@@ -26,7 +28,7 @@ body {
 }
 
 .cafe-nav li {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 .cafe-nav a {
@@ -35,10 +37,12 @@ body {
   font-weight: bold;
 }
 
-/* メインビジュアル（ここにカフェの画像を入れる想定） */
+/* メインビジュアル */
 .cafe-hero {
-  height: 80vh;
-  background-color: #d7ccc8; /* 画像がない時の仮の色 */
+  height: 70vh;
+  background-color: #d7ccc8; /* 画像がない場合の仮の色 */
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,24 +51,103 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 /* コンテンツ共通 */
 .cafe-content {
   padding: 80px 20px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
-.menu-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.cafe-content h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #d7ccc8;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
 }
 
+/* --- メニューセクションのレイアウト（PC） --- */
+.menu-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* スマホで縦並びにするため */
+  gap: 30px; /* アイテム間の隙間 */
+}
+
+/* 各メニューアイテムのカードデザイン */
 .menu-item {
-  margin: 20px;
+  flex: 1;
+  min-width: 280px; /* これ以上小さくならない */
+  max-width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden; /* 画像の角を丸くする */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* おすすめアイテムを少し目立たせる（オプション） */
+.menu-item.featured {
+  border: 2px solid #a1887f; /* 薄いブラウン */
+}
+
+/* 画像の設定 */
+.menu-img {
+  width: 100%;
+  height: 200px; /* 高さを揃える */
+  object-fit: cover; /* ★画像を引き伸ばさず、歪ませずに枠に収める ★最重要 */
+  display: block;
+}
+
+/* 画像の下のテキストエリア */
+.menu-text {
+  padding: 20px;
+}
+
+.menu-text h3 {
+  margin: 0 0 10px 0;
+  font-family: "Georgia", serif;
+  color: #4e342e;
+}
+
+.menu-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #795548;
+}
+
+/* アクセス・フッター */
+.footer {
+  background-color: #4e342e;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+/* --- レスポンシブ (スマホ表示) --- */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-list {
+    flex-direction: column; /* 縦並びにする */
+    align-items: center; /* 中央寄せ */
+  }
+  
+  .menu-item {
+    max-width: 90%; /* 横幅を広げる */
+  }
 }
