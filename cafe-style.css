@@ -2,9 +2,9 @@
 
 body {
   margin: 0;
-  font-family: "Georgia", serif; /* カフェらしい書体 */
+  font-family: "Georgia", serif;
   color: #4e342e;
-  background-color: #fafafa; /* 背景は薄いグレー */
+  background-color: #fafafa;
   line-height: 1.6;
 }
 
@@ -37,12 +37,12 @@ body {
   font-weight: bold;
 }
 
-/* メインビジュアル（Velo.JPGを背景に設定） */
+/* メインビジュアル（背景画像） */
 .cafe-hero {
   height: 65vh;
-  background-image: url("Velo.JPG"); /* 背景画像の指定 */
-  background-size: cover;           /* 枠に合わせて切り抜く */
-  background-position: center;       /* 中央を表示 */
+  background-image: url("Velo.JPG");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -51,15 +51,27 @@ body {
   padding-top: 60px;
 }
 
-/* 画像の上の文字を見やすくする設定 */
+/* ★文字を乗せる「白い板」の設定 */
 .hero-text {
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.6); /* 文字に影を付けて読みやすく */
+  background-color: rgba(255, 255, 255, 0.7); /* 白色の70%の濃さ（半透明） */
+  padding: 30px 50px;             /* 上下左右の余白（板の広さ） */
+  border-radius: 10px;            /* 角を少し丸くする */
+  color: #4e342e;                 /* 文字色は読みやすい濃いブラウンに */
+  backdrop-filter: blur(5px);     /* 背景の写真を少しぼかす（高級感が出ます） */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 板に影を付けて浮き上がらせる */
 }
+
+
 
 .hero-text h1 {
   font-size: 3.5rem;
+  margin: 0 0 10px 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
   margin: 0;
+  font-weight: bold;
 }
 
 /* コンテンツ共通 */
@@ -78,7 +90,7 @@ body {
   padding-bottom: 10px;
 }
 
-/* メニューカードの並び */
+/* メニューカード設定 */
 .menu-list {
   display: flex;
   justify-content: center;
@@ -96,11 +108,10 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ★メニュー写真のサイズを強制的に揃える設定 */
 .menu-img {
   width: 100%;
-  height: 200px;     /* 高さを200pxで統一 */
-  object-fit: cover;  /* 画像を歪ませずに枠に収める */
+  height: 200px;
+  object-fit: cover;
   display: block;
 }
 
@@ -115,16 +126,17 @@ body {
   text-align: center;
 }
 
-/* スマホ表示用の設定 */
+/* スマホ表示 */
 @media (max-width: 600px) {
+  .hero-text {
+    width: 80%;       /* スマホでは板の横幅を広げる */
+    padding: 20px;
+  }
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .menu-list {
     flex-direction: column;
     align-items: center;
-  }
-  .cafe-card {
-    width: 90%;
   }
 }
