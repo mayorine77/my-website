@@ -1,10 +1,10 @@
-/* cafe-style.css (画像組み込み・レスポンシブ版) */
+/* cafe-style.css */
 
 body {
   margin: 0;
-  font-family: "Georgia", serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   color: #4e342e;
-  background-color: #fafafa;
+  background-color: #fafafa; /* 薄いグレーの背景 */
   line-height: 1.6;
 }
 
@@ -16,7 +16,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .cafe-nav ul {
@@ -39,10 +39,8 @@ body {
 
 /* メインビジュアル */
 .cafe-hero {
-  height: 70vh;
-  background-color: #d7ccc8; /* 画像がない場合の仮の色 */
-  background-size: cover;
-  background-position: center;
+  height: 60vh;
+  background-color: #d7ccc8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +49,13 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 /* コンテンツ共通 */
 .cafe-content {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -66,88 +63,57 @@ body {
 
 .cafe-content h2 {
   font-size: 2rem;
+  margin-bottom: 40px;
   border-bottom: 2px solid #d7ccc8;
   display: inline-block;
   padding-bottom: 10px;
-  margin-bottom: 40px;
 }
 
-/* --- メニューセクションのレイアウト（PC） --- */
+/* メニューの並び */
 .menu-list {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* スマホで縦並びにするため */
-  gap: 30px; /* アイテム間の隙間 */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* 各メニューアイテムのカードデザイン */
-.menu-item {
+/* カードのデザイン */
+.cafe-card {
   flex: 1;
-  min-width: 280px; /* これ以上小さくならない */
+  min-width: 280px;
   max-width: 300px;
-  background-color: white;
-  border-radius: 12px;
-  overflow: hidden; /* 画像の角を丸くする */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* おすすめアイテムを少し目立たせる（オプション） */
-.menu-item.featured {
-  border: 2px solid #a1887f; /* 薄いブラウン */
-}
-
-/* 画像の設定 */
-/* 画像の大きさを強制的に揃える設定 */
+/* ★画像のサイズを強制的に揃える魔法の指示 */
 .menu-img {
-  width: 100%;      /* 横幅はカードいっぱいに */
-  height: 250px;    /* ★高さを「250px」で全員同じにする */
-  object-fit: cover; /* ★超重要：これで余白を出さず、引き伸ばさずにトリミングする */
+  width: 100%;
+  height: 200px; /* 全員高さを200pxにする */
+  object-fit: cover; /* 歪ませずに切り抜く */
   display: block;
 }
-/* 画像の下のテキストエリア */
+
 .menu-text {
   padding: 20px;
 }
 
-.menu-text h3 {
-  margin: 0 0 10px 0;
-  font-family: "Georgia", serif;
-  color: #4e342e;
-}
-
-.menu-text p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #795548;
-}
-
-/* アクセス・フッター */
 .footer {
   background-color: #4e342e;
   color: white;
+  padding: 20px;
   text-align: center;
-  padding: 30px 0;
-  margin-top: 60px;
 }
 
-/* --- レスポンシブ (スマホ表示) --- */
+/* スマホ用の調整 */
 @media (max-width: 600px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-  
   .menu-list {
-    flex-direction: column; /* 縦並びにする */
-    align-items: center; /* 中央寄せ */
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .menu-item {
-    max-width: 90%; /* 横幅を広げる */
+  .cafe-card {
+    width: 90%;
   }
 }
