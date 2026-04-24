@@ -134,7 +134,25 @@ button { padding: 8px 15px; background: #003366; color: white; border: none; bor
 }
 .link-btn { color: #003366; font-weight: bold; text-decoration: none; }
 
+/* --- style.css の一番下にあるレスポンシブ部分を修正 --- */
+
 @media (max-width: 600px) {
-  .hero-content h1 { font-size: 2rem; }
-  .content ul { flex-direction: column; }
+  .hero-section {
+    height: 35vh; /* スマホでは高さを少し抑える（画面の35%） */
+    background-attachment: scroll; /* スマホではパララックスをオフにする（動作が安定します） */
+    background-position: center center; /* 画像の真ん中を映す */
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem; /* 文字を少し小さくしてバランス調整 */
+  }
+
+  .card {
+    width: 95%; /* 横幅いっぱいに近くする */
+    margin-top: -30px; /* 重なり具合を浅くする */
+  }
+
+  .content ul {
+    flex-direction: column; /* 縦並びにする */
+  }
 }
